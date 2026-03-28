@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# ========================
+# ZADATAK 2
+# ========================
+
+mkdir -p vjezba_2/data
+mkdir -p vjezba_2/backup
+
+cd vjezba_2/data
+
+touch script.js style.css .env
+
+echo 'console.log("Hello, World!")' > script.js
+echo 'body { background-color: #f0f0f0; }' > style.css
+echo 'VJEZBE=OS' > .env
+
+# provjera sadržaja
+cat script.js
+cat style.css
+cat .env
+
+# ========================
+# ZADATAK 3
+# ========================
+
+cd ..
+
+cp -rv data/* backup/
+cp -rv data/.* backup/ 2>/dev/null
+
+cd data
+
+# ispis backup direktorija
+ls -lAhS ../backup
+
+# ========================
+# ZADATAK 4
+# ========================
+
+# interaktivno brisanje (tražit će potvrdu)
+rm -iv script.js style.css
+
+# kopiranje bez overwrite
+cp -rvn ../backup/* .
+cp -rvn ../backup/.* . 2>/dev/null
+
+# završni ispis
+ls -lAt1
+
+# dodatni prikaz
+tree -a
+
+# ========================
+# ZADATAK 5
+# ========================
+
+cd ..
+
+# primjer na trenutnom direktoriju (možeš promijeniti putanju)
+ls -laS
+ls -lhS
+tree -a
