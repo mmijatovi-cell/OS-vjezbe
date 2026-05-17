@@ -1,0 +1,8 @@
+Zadatak 2:
+mkdir -p vjezba_2/data
+mkdir -p vjezba_2/backup
+...
+
+Zadatak 3:
+cp -rv data/* backup/
+...
